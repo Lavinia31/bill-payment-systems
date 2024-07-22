@@ -1,0 +1,10 @@
+<form [formGroup]="balanceForm" >
+    <mat-form-field class="example-full-width" appearance="fill">
+         <mat-label>Balance(RON)</mat-label>
+         <input type="string"  matInput formControlName="additionalbalance" placeholder="Ex. 100" />
+    </mat-form-field>
+
+    <button
+        mat-raised-button color="primary"  (click)="updateBalance()">Save
+    </button>
+</form>

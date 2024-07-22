@@ -1,0 +1,29 @@
+<form [formGroup]="paymentmethodForm" (submit)="updateMethod()">
+     <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Card Digits</mat-label>
+          <input type="string"  matInput formControlName="cardDigits" placeholder="Ex. 0123" />
+     </mat-form-field>
+     <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Expiration Date</mat-label>
+          <input type="string" matInput formControlName="expirationDate" placeholder="Ex. 05/09" />
+     </mat-form-field>
+     <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Token</mat-label>
+          <input type="string" matInput formControlName="token" placeholder="Ex. 0123" />
+     </mat-form-field>
+
+     <!-- <button
+          mat-raised-button color="primary"   (click)="updateMethod()">Change Payment Method
+     </button>
+     <button class="button-container"
+          mat-raised-button color="primary" [disabled]="disabledButton"  (click)="saveMethod()">Save
+     </button> -->
+     <button class="button-container"
+     mat-raised-button color="primary" *ngIf="!showSaveButton" (click)="updateMethod()">Change Payment Method
+   </button>
+   <button class="button-container"
+     mat-raised-button color="primary" *ngIf="showSaveButton" (click)="saveMethod()">Save
+   </button>
+
+</form>
+
